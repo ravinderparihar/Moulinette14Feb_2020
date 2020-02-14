@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.moulinette.utilities.MainApplication"/>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.moulinette.models.vote.results.Datum" />
+
+        <variable
+            name="click"
+            type="com.moulinette.activities.PlayedContestDetails.MyClickHandler" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/loginrootlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@mipmap/result_bg">
+
+        <nl.dionsegijn.konfetti.KonfettiView
+            android:id="@+id/viewKonfetti"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:id="@+id/top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="center"
+                android:onClick="@{click::backClick}"
+                android:src="@drawable/ic_back_black"/>
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/voting_result_details"
+                android:gravity="center"
+                android:layout_alignTop="@+id/back"
+                android:layout_alignBottom="@+id/back"
+                android:typeface="serif"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorBlack"/>
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_lay"
+            android:padding="15dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="15dp"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    android:elevation="10dp"
+                    android:background="@drawable/dashboard_btn_bg_ac">
+
+
+
+
+
+                            <TextView
+                                android:id="@+id/title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{data.voteTitle}"
+                                android:typeface="serif"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/colorBlack" />
+
+
+
+                            <TextView
+                                android:id="@+id/particepent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/total_votes"
+                                android:typeface="serif"
+                                android:layout_marginLeft="15dp"
+                                android:layout_below="@+id/title"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/colorBlack" />
+                            <TextView
+                                android:id="@+id/particepent_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{MainApplication.numberFormater(data.noOfVoters)}"
+                                android:typeface="serif"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_toRightOf="@+id/particepent"
+                                android:layout_below="@+id/title"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/colorRed" />
+
+
+
+
+
+                            <LinearLayout
+                                android:id="@+id/winr_hed_lay"
+                                android:layout_below="@+id/particepent_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/no_of_winners"
+                                    android:typeface="serif"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/colorBlack" />
+                                <TextView
+                                    android:id="@+id/winrs_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:typeface="serif"
+                                    android:text="@{data.numberWinners}"
+                                    android:layout_marginLeft="5dp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/colorRed" />
+                            </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/date_hed_lay"
+                        android:layout_below="@+id/winr_hed_lay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/winners"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/result_date"
+                            android:typeface="serif"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/colorBlack" />
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:typeface="serif"
+                            android:text="@{data.resultDate}"
+                            android:layout_marginLeft="5dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/colorRed" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/winrs_lst"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:typeface="serif"
+                        android:text="@string/winners_list"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_below="@+id/date_hed_lay"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/colorBlack" />
+
+                            <LinearLayout
+                                android:id="@+id/main_view_lay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/winrs_lst"
+                                android:orientation="vertical"/>
+
+
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

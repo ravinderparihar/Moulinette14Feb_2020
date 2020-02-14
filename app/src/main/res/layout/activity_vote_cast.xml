@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.moulinette.activities.VoteCast.MyClickHandler" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/loginrootlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+
+
+        <RelativeLayout
+            android:id="@+id/top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="center"
+                android:onClick="@{click::backClick}"
+                android:src="@drawable/ic_back_black"/>
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vote"
+                android:gravity="center"
+                android:layout_alignTop="@+id/back"
+                android:layout_alignBottom="@+id/back"
+                android:typeface="serif"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorBlack"/>
+
+        </RelativeLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_lay"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/contest_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Miss World Contest"
+                android:typeface="serif"
+                android:layout_marginTop="10dp"
+                android:background="@color/border_bg"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+
+                <TextView
+                    android:id="@+id/hed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vote_for_below_candidates"
+                    android:typeface="serif"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorBlack"/>
+
+                <LinearLayout
+                    android:id="@+id/parti_lay"
+                    android:layout_below="@+id/hed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_contestant"
+                        android:typeface="serif"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/colorGray"/>
+
+                    <TextView
+                        android:id="@+id/cotestent_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:typeface="serif"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/colorBlack"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/right_lay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/parti_lay"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no_of_winners"
+                        android:typeface="serif"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/colorGray"/>
+
+                    <TextView
+                        android:id="@+id/number_of_win"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:typeface="serif"
+                        android:layout_centerHorizontal="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/colorBlack"/>
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/right_lay"
+                    android:layout_above="@+id/button_submit"
+                    android:scrollbars="none">
+
+                    <TextView
+                        android:id="@+id/no_rec_found"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="No contestant found"
+                        android:typeface="serif"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorGray"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycle_constents"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none"/>
+
+                </RelativeLayout>
+
+
+
+                <Button
+                    android:id="@+id/button_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_login_sel"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/submit"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:typeface="serif"
+                    android:onClick="@{click::submitClick}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorWhite" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/already_played"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_lay"
+            android:clickable="true"
+            android:visibility="gone"
+            android:background="@mipmap/result_bg">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:text="@string/already_played_quiz"/>
+
+            <Button
+                android:id="@+id/button_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_login_sel"
+                android:layout_centerHorizontal="true"
+                android:text="@string/ok"
+                android:layout_weight="1"
+                android:typeface="serif"
+                android:onClick="@{click::backClick}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorWhite" />
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+</layout>

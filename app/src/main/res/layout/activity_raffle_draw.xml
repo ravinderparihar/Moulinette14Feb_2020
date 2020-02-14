@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.moulinette.activities.RaffleDrawSection.MyClickHandler" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/loginrootlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+        <RelativeLayout
+            android:id="@+id/top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="center"
+                android:onClick="@{click::backClick}"
+                android:src="@drawable/ic_back_black"/>
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/raffle_draw"
+                android:gravity="center"
+                android:layout_alignTop="@+id/back"
+                android:layout_alignBottom="@+id/back"
+                android:typeface="serif"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorBlack"/>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_lay"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/raffral_draw"/>
+
+            <TextView
+                android:id="@+id/upcoming_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/contests"
+                android:typeface="serif"
+                android:layout_marginTop="10dp"
+                android:background="@color/border_bg"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{click::upcomingClick}"
+                android:drawableRight="@drawable/ic_remove_black"
+                android:paddingRight="5dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"/>
+
+            <LinearLayout
+                android:id="@+id/up_coming_contest_lay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/no_rec_found"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="No contest found"
+                        android:typeface="serif"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorGray"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycle_contests"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:scrollbars="none"/>
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/playedtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_vote_draws"
+                android:typeface="serif"
+                android:background="@color/border_bg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:onClick="@{click::playedClick}"
+                android:drawableRight="@drawable/ic_remove_black"
+                android:paddingRight="5dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorBlack"/>
+
+            <LinearLayout
+                android:id="@+id/played_contest_lay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/no_rec_found1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="No result found"
+                        android:typeface="serif"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorGray"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycle_quiz_vote_draws"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:scrollbars="none"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</layout>
+

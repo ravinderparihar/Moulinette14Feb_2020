@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#282F39</color>
+    <color name="colorBlue">#4595fb</color>
+    <color name="colorGray">#9B9B9B</color>
+    <color name="colorYellow">#FDCC0D</color>
+    <color name="colorRed">#c90e20</color>
+    <color name="colorLiteGray">#f2f2f6</color>
+    <color name="colorGreen">#15c39a</color>
+    <color name="colorLiteGreen">#b5cf5e</color>
+    <color name="bgBottomNavigation">#282F39</color>
+    <color name="colorBlackTrnsprent">#40000000</color>
+    <color name="colorWheelBg">#232e31</color>
+    <color name="colorFormBg">#fbf7f7</color>
+    <color name="colorGoogle">#4385f5</color>
+    <color name="colorEmail">#EF4335</color>
+    <color name="colorsong_book">#f0f0f0</color>
+    <color name="login_btn">#f04028</color>
+    <color name="border_bg">#f6f2f3</color>
+    <color name="colorFacebook" tools:ignore="MissingDefaultResource">#1877f2</color>
+</resources>

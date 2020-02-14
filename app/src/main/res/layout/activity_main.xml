@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="de.hdodenhof.circleimageview.CircleImageView" />
+
+        <variable
+            name="click"
+            type="com.moulinette.activities.MainActivity.MyClickHandler" />
+
+    </data>
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/main_lay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@mipmap/bg">
+
+            <View
+                android:id="@+id/middle"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerInParent="true" />
+
+            <FrameLayout
+                android:id="@+id/frame_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/reg_toolbar" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/reg_toolbar"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_menu_black" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center">
+
+
+                    <TextView
+                        android:id="@+id/header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/dashboard"
+                        android:textAllCaps="false"
+                        android:layout_centerHorizontal="true"
+                        android:typeface="monospace"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/colorWhite" />
+
+
+                </RelativeLayout>
+                <ImageView
+                    android:id="@+id/message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_message" />
+                </RelativeLayout>
+
+
+            </androidx.appcompat.widget.Toolbar>
+        </RelativeLayout>
+
+
+<!--        android:layout_gravity="start"-->
+
+
+        <RelativeLayout
+            android:layout_width="270dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="start"
+            android:background="@color/colorWhite">
+
+            <RelativeLayout
+                android:id="@+id/tp_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="35dp"
+                android:paddingBottom="30dp"
+                android:gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/side_menu_header">
+
+
+                <RelativeLayout
+                    android:id="@+id/profile_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{click::profileClick}">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image_def"
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:clickable="false"
+                        android:src="@mipmap/pr" />
+
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/profile_image"
+                        android:layout_width="86dp"
+                        android:layout_height="86dp"
+                        android:clickable="false"
+                        fresco:roundAsCircle="true" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/profile_bg"
+                    android:layout_alignBottom="@+id/profile_bg"
+                    android:layout_alignTop="@+id/profile_bg"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="45dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hana Roy"
+                        android:singleLine="true"
+                        android:typeface="serif"
+                        android:textColor="@color/colorWhite"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#1106F, sec-4"
+                        android:typeface="monospace"
+                        android:textColor="@color/colorWhite"
+                        android:singleLine="true"
+                        android:textSize="10dp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+            <ListView
+                android:id="@+id/contactuss_left_drawer"
+                android:layout_width="match_parent"
+                android:paddingTop="10dp"
+                android:divider="@null"
+                android:layout_below="@+id/tp_lay"
+                android:layout_height="match_parent"
+                android:choiceMode="singleChoice" />
+        </RelativeLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

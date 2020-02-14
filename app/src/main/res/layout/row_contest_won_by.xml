@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.moulinette.models.draws.Datum" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:clickable="false"
+        android:layout_marginRight="15dp">
+
+
+
+        <RelativeLayout
+            android:id="@+id/profile_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:clickable="false"
+            android:elevation="5dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image_def"
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:clickable="false"
+                android:src="@mipmap/pr"/>
+
+
+
+<!--            <com.facebook.drawee.view.SimpleDraweeView-->
+<!--                android:id="@+id/profile_image"-->
+<!--                android:layout_width="86dp"-->
+<!--                android:layout_height="86dp"-->
+<!--                android:clickable="false"-->
+<!--                app:image="@{data.image}"-->
+<!--                fresco:roundAsCircle="true" />-->
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_below="@+id/profile_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.resultDate}"
+                android:singleLine="true"
+                android:typeface="serif"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorBlack"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+            <TextView
+                android:id="@+id/votes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.nameChallenge}"
+                android:layout_gravity="center_horizontal"
+                android:typeface="monospace"
+                android:textColor="@color/colorGray"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

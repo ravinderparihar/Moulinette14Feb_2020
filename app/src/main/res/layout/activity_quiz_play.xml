@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="click"
+            type="com.moulinette.activities.QuizPlay.MyClickHandler" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/loginrootlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+        <RelativeLayout
+            android:id="@+id/top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="center"
+                android:onClick="@{click::backClick}"
+                android:src="@drawable/ic_back_black"/>
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_play"
+                android:gravity="center"
+                android:layout_alignTop="@+id/back"
+                android:layout_alignBottom="@+id/back"
+                android:typeface="serif"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorBlack"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/quiz_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz_play"
+            android:typeface="serif"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@+id/top_lay"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorBlack"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/quiz_title"
+            android:background="@color/colorWhite">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle_played"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"/>
+
+                <LinearLayout
+                    android:id="@+id/bot_lay"
+                    android:layout_below="@+id/recycle_played"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+<!--                    <Button-->
+<!--                        android:id="@+id/buttonCancel"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@drawable/button_faded_sel"-->
+<!--                        android:text="Next"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:typeface="serif"-->
+<!--                        android:layout_margin="5dp"-->
+<!--                        android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--                        android:textColor="@color/colorBlack" />-->
+
+                    <Button
+                        android:id="@+id/buttonConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_login_sel"
+                        android:text="@string/submit"
+                        android:layout_margin="15dp"
+                        android:layout_weight="1"
+                        android:typeface="serif"
+                        android:onClick="@{click::submitClick}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+
+        </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/already_played"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:visibility="gone"
+                android:gravity="center"
+                android:background="@mipmap/result_bg">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"
+                    android:text="@string/already_played_quiz"/>
+
+                <Button
+                    android:id="@+id/button_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/btn_login_sel"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/ok"
+                    android:layout_weight="1"
+                    android:typeface="serif"
+                    android:onClick="@{click::backClick}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorWhite" />
+
+            </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>

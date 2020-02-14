@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.moulinette.activities.Profile.MyClickHandler" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/loginrootlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+
+
+        <RelativeLayout
+            android:id="@+id/top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/topbanner"
+            android:paddingTop="30dp"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="center"
+                android:onClick="@{click::backClick}"
+                android:src="@drawable/ic_back"/>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/profile_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/back"
+                android:layout_centerHorizontal="true"
+                android:elevation="5dp"
+                android:onClick="@{click::changeProfilePic}"
+                android:layout_margin="5dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image_def"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:clickable="false"
+                    android:src="@mipmap/profile"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/profile_image"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:clickable="false"
+                    fresco:roundAsCircle="true" />
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:id="@+id/u_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_bg"
+                android:layout_marginTop="5dp"
+                android:typeface="serif"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/colorWhite"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/u_name"
+                android:typeface="serif"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorWhite"
+                android:layout_centerHorizontal="true"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_lay"
+            android:padding="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/buttonConfirm">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint="@string/enter_your_name"
+                    android:typeface="monospace"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:inputType="textPersonName"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:shadowColor="@color/colorPrimary"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorGray"
+                    app:validateEmpty="@{true}"
+                    app:validateEmptyMessage="@{@string/name_empty}"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email"
+                    android:layout_marginTop="10dp"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint="@string/enter_your_email"
+                    android:typeface="monospace"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:shadowColor="@color/colorPrimary"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorGray"
+                    android:inputType="textEmailAddress"
+                    app:validateMinLength="@{4}"
+                    app:validateEmpty="@{true}"
+                    app:validateEmptyMessage="@{@string/email_empty}"
+                    app:validateTypeMessage="@{@string/email_valied}"
+                    app:validateType='@{"email"}'/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number"
+                    android:layout_marginTop="10dp"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                        <com.hbb20.CountryCodePicker
+                            android:id="@+id/ccp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:typeface="monospace"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+
+                        <EditText
+                            android:id="@+id/phone_edt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/ccp"
+                            android:hint="@string/enter_phone_number"
+                            android:padding="5dp"
+                            android:textColor="@color/colorBlack"
+                            android:singleLine="true"
+                            android:typeface="monospace"
+                            android:inputType="phone"
+                            app:validateMaxLength="@{10}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:background="@android:color/transparent"/>
+
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/address"
+                    android:layout_marginTop="10dp"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:id="@+id/address_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint="@string/enter_your_address"
+                    android:typeface="monospace"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:shadowColor="@color/colorPrimary"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorGray"
+                    android:inputType="text"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/gender"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+
+
+                <Spinner
+                    android:id="@+id/gender_spiner"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/spinner_bg"
+                    android:typeface="monospace"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:entries="@array/gender"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/birthday"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+
+
+                    <TextView
+                        android:id="@+id/bithday"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@+id/birth"
+                        android:layout_width="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="5dp"
+                        android:layout_height="55dp"
+                        android:textColor="@color/colorBlack"
+                        android:typeface="monospace"
+                        android:onClick="@{click::birthdayClick}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:hint="@string/select_date_of_birth"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+
+
+
+
+            </LinearLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+
+
+
+                <Button
+                    android:id="@+id/buttonConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/btn_login_sel"
+                    android:text="@string/update_profile"
+                    android:typeface="serif"
+                    android:layout_alignParentBottom="true"
+                    android:onClick="@{click::updateProfileClick}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorWhite" />
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</layout>

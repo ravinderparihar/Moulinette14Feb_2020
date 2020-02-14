@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    <variable
+        name="click"
+        type="com.moulinette.activities.Signup.MyClickHandler" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/loginrootlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@mipmap/login_bg">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/logo_splash"
+            android:layout_alignParentTop="true"
+            android:scaleType="center"
+            android:layout_above="@+id/mid_lay"/>
+
+
+
+        <LinearLayout
+            android:id="@+id/mid_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="15dp"
+            android:orientation="vertical">
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/signup"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:typeface="serif"
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack" />
+
+
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo_lay"
+                android:elevation="10dp"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="@string/enter_your_name"
+                    android:typeface="monospace"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:shadowColor="@color/colorPrimary"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorGray"
+                    android:inputType="textEmailAddress"
+                    app:validateEmpty="@{true}"
+                    app:validateEmptyMessage="@{@string/name_empty}"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/username"
+                    android:layout_marginTop="15dp"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:id="@+id/user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="@string/enter_username"
+                    android:typeface="monospace"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:shadowColor="@color/colorPrimary"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorGray"
+                    android:inputType="text"
+                    app:validateMinLength="@{4}"
+                    app:validateEmpty="@{true}"
+                    app:validateEmptyMessage="@{@string/user_name_empty}"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email"
+                    android:layout_marginTop="15dp"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="@string/enter_your_email"
+                    android:typeface="monospace"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:outlineSpotShadowColor="@color/colorPrimary"
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:shadowColor="@color/colorPrimary"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorGray"
+                    android:inputType="textEmailAddress"
+                    app:validateMinLength="@{4}"
+                    app:validateEmpty="@{true}"
+                    app:validateEmptyMessage="@{@string/email_empty}"
+                    app:validateTypeMessage="@{@string/email_valied}"
+                    app:validateType='@{"email"}'/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/password"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="@string/enter_your_password"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:typeface="monospace"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorGray"
+                    android:inputType="textPassword"
+                    app:validateEmpty="@{true}"
+                    app:validateMinLength="@{4}"
+                    app:validateEmptyMessage="@{@string/password_empty}"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/confirm_password"
+                    android:typeface="serif"
+                    android:textColor="@color/colorBlack"/>
+
+
+                <EditText
+                    android:id="@+id/con_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="@string/enter_confirm_password"
+                    android:background="@null"
+                    android:padding="5dp"
+                    android:typeface="monospace"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorGray"
+                    android:inputType="textPassword"
+                    app:validateMinLength="@{4}"
+                    app:validateEmpty="@{true}"
+                    app:validateEmptyMessage="@{@string/con_password_empty}"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/colorGray"/>
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/bot_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+
+                <Button
+                    android:id="@+id/buttonConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/btn_login_sel"
+                    android:text="@string/signup"
+                    android:typeface="serif"
+                    android:onClick="@{click::signupClick}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorWhite" />
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</layout>

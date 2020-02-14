@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="raffle_draw">Tirage au sort</string>
+    <string name="quiz">Quiz</string>
+    <string name="mcq_or_scq">(QCM ou SCQ)</string>
+    <string name="vote">Vote</string>
+    <string name="dashboard">Tableau de bord</string>
+
+
+    <string name="user_name_empty">Nom d\'utilisateur ne peut pas vider</string>
+    <string name="name_empty">Nom ne peut pas vider</string>
+    <string name="email_empty">Email ne peut pas se vider</string>
+    <string name="email_valied">S\'il vous plaît, mettez une adresse email valide.</string>
+    <string name="password_empty">Mot de passe ne peut pas vider</string>
+    <string name="con_password_empty">Confirmer le mot de passe ne peut pas vider</string>
+    <string name="password_mis_m">Identité mot de passe incompatibilité, s\'il vous plaît vérifier.</string>
+    <string name="other_error">Erreur quelque chose, s\'il vous plaît essayez à nouveau</string>
+    <string name="ok">D\'accord</string>
+
+    <string name="no_internet">Pas de connexion Internet, connectez-vous et essayez à nouveau</string>
+    <string name="oops">Oops!</string>
+
+    //Logout Password
+    <string name="log_out">Déconnexion</string>
+    <string name="do_you_want_to_logout">Voulez-vous vous déconnecter de l\'application?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+
+
+    <string-array name="gender">
+        <item>Sélectionnez le sexe</item>
+        <item>Mâle</item>
+        <item>Femelle</item>
+    </string-array>
+
+
+
+    //Capture Image
+    <string name="take_photo">Prendre une photo</string>
+    <string name="choose_frm_gallery">Choisir dans la bibliothèque</string>
+    <string name="add_photo">Ajouter une photo!</string>
+    <string name="choose_pic">Choisissez une photo</string>
+    <string name="cancel">Annuler</string>
+    <string name="select_image">S\'il vous plaît autoriser les autorisations afin que l\'application peut obtenir l\'image</string>
+    <string name="profile_updated">Mise à jour du profil réussie</string>
+
+    <string name="successfully_registered">Enregistré avec succès.</string>
+
+    //Change Password
+    <string name="popup_chng_pass">Changer le mot de passe</string>
+    <string name="old_password">ancien mot de passe</string>
+    <string name="new_password">nouveau mot de passe</string>
+    <string name="confirm_new_password">Confirmer le nouveau mot de passe</string>
+    <string name="confirm">Confirmer</string>
+    <string name="change_pass">Votre mot de passe a changé!</string>
+    <string name="old_pass">Ancien mot de passe ne peut pas vider</string>
+    <string name="new_pass">Nouveau mot de passe ne peut pas vider</string>
+    <string name="empty_password">Le mot de passe ne peut pas être vide</string>
+    <string name="old_passs">Ancien mot de passe ne correspond pas</string>
+    <string name="new_com_mismatch">Nouveau mot de passe et confirmer que le mot de passe ne correspond pas</string>
+    <string name="empty_confirm">Confirmer le mot de passe ne peut pas vider</string>
+    <string name="please_press">Veuillez cliquer à nouveau sur RETOUR pour quitter.</string>
+    <string name="home">Accueil</string>
+    <string name="profile">Profil</string>
+    <string name="my_refrels">Mes tirages au sort</string>
+    <string name="my_quizs">Mes quiz</string>
+    <string name="my_votes">Mes Votes</string>
+    <string name="history">Historique</string>
+    <string name="settings">Paramètres</string>
+    <string name="logout">Se déconnecter</string>
+    <string name="name">Nom</string>
+    <string name="email">Email</string>
+    <string name="enter_your_name">Entrez votre nom</string>
+    <string name="enter_your_email">Entrer votre Email</string>
+    <string name="number">Téléphone</string>
+    <string name="enter_phone_number">Entrez le numéro de téléphone</string>
+    <string name="address">Adresse</string>
+    <string name="enter_your_address">Entrez votre adresse</string>
+    <string name="gender">Sexe</string>
+    <string name="select_date_of_birth">Sélectionnez la date de naissance</string>
+    <string name="birthday">Anniversaire</string>
+    <string name="update_profile">Mettre à jour le profil</string>
+    <string name="upcoming_draws">Tirages à venir</string>
+    <string name="played_draws">Tirages Joués</string>
+    <string name="quiz_section">Section de quiz</string>
+    <string name="upcoming_quizzes">Quiz à venir</string>
+    <string name="quizzes_result">Résultat du quiz</string>
+    <string name="no_quiz_found">Aucun quiz trouvé</string>
+    <string name="no_result_found">Aucun résultat trouvé</string>
+    <string name="vote_section">Section de Vote</string>
+    <string name="upcoming_contests">Concours à venir</string>
+    <string name="played_contests">Concours joués</string>
+    <string name="voting_result_details">Détails du résultat du Vote</string>
+    <string name="total_participants">Nombre total de participants</string>
+    <string name="win_by">Liste des gagnants</string>
+    <string name="played_draws_detail">Détail du tableau joué</string>
+    <string name="name_det">Nom:</string>
+    <string name="rank">Rang:</string>
+    <string name="number_of_participants">Nombre de participants:</string>
+    <string name="prize">Prix:</string>
+    <string name="video_draw">Tirage vidéo:</string>
+    <string name="played_quiz_detail">Détail du quiz joué</string>
+    <string name="quiz_played_date">Quiz joué la date</string>
+    <string name="result_date">Date de résultat</string>
+    <string name="quiz_play">Quiz Play</string>
+    <string name="submit">Soumettre</string>
+    <string name="result">Résultat</string>
+    <string name="change_language">Changer de langue</string>
+    <string name="change_password">Changer le mot de passe</string>
+    <string name="delete_account">Supprimer le compte</string>
+    <string name="signup">S\'inscrire</string>
+    <string name="username">Nom d\'utilisateur</string>
+    <string name="enter_username">Saisissez votre nom d\'utilisateur</string>
+    <string name="password">Mot de passe</string>
+    <string name="enter_your_password">Tapez votre mot de passe</string>
+    <string name="confirm_password">Confirmez le mot de passe</string>
+    <string name="enter_confirm_password">Entrez le mot de passe de confirmation</string>
+    <string name="con_and_pass_mismtch">Mot de passe et confirmer la non correspondance des mots de passe</string>
+    <string name="login">S\'identifier</string>
+    <string name="username_email">Nom d\'utilisateur / Email</string>
+    <string name="enter_username_email">Entrer nom d\'utilisateur / email</string>
+    <string name="remember_me">Souviens-toi de moi</string>
+    <string name="forgot_password">Mot de passe oublié?</string>
+    <string name="please_wait">S\'il vous plaît, attendez..</string>
+    <string name="congratulations">Toutes nos félicitations</string>
+    <string name="your_quiz_is_submitted_successfully">Votre questionnaire est soumis avec succès et le résultat sera déclaré</string>
+    <string name="your_vote_cast_successfully">Votre Vote a abouti et le résultat sera
+        déclaré</string>
+    <string name="no_of_winners">Nombre de gagnants:</string>
+    <string name="user_participate">Utilisateur participe</string>
+    <string name="your_rank">Ton rang</string>
+    <string name="time_left">Temps restant</string>
+    <string name="total_contestant">Total participant:</string>
+    <string name="please_cast_vote">Merci de Voter avant la soumission</string>
+    <string name="vote_for_below_candidates">Votez pour les candidats ci-dessous</string>
+    <string name="error_ocred">une erreur s\'est produite lors de la soumission du questionnaire</string>
+    <string name="are_you_sure">Êtes-vous sûr</string>
+    <string name="want_delete_account">Voulez-vous supprimer votre compte?</string>
+    <string name="no_ac_found">Aucun compte trouvé</string>
+    <string name="no_qz_rslt_fd">Aucun résultat de quiz trouvé</string>
+    <string name="missed_qst">Vous avez manqué les questions à la réponse, s\'il vous plaît vérifier à nouveau</string>
+    <string name="no_qst_fd">Aucune question trouvée</string>
+    <string name="till_prtcipted">Jusqu\'à présent participé:</string>
+    <string name="total_votes">Nombre total de suffrages exprimés:</string>
+    <string name="vote_casted_till">Jusqu\'à maintenant voté:</string>
+    <string name="no_played_contest">Aucun concours joué trouvé</string>
+    <string name="vido_ernd">Votes gagnés:</string>
+    <string name="no_change">Aucune modification apportée à la mise à jour, veuillez apporter une modification au profil de mise à jour</string>
+    <string name="till_now">Jusqu\'à présent participé:</string>
+    <string name="res_date">Date du résultat:</string>
+    <string name="usr_parti">Participé par l\'utilisateur:</string>
+    <string name="your_rnk">Ton rang:</string>
+
+    <string name="already_cast">Votre Vote a déjà été exprimé! \n ou \n date expirée pour ce
+         Concours!</string>
+    <string name="already_played_quiz">Vous avez déjà joué \n ou \n date expirée pour ce quiz</string>
+    <string name="wuthout_ac_vote_cast">Sans compte, vous ne pouvez pas Voter. Veuillez donc
+        créer un compte</string>
+    <string name="without_ac_quiz">Sans compte, vous ne pouvez pas jouer au quiz, veuillez donc créer un compte</string>
+    <string name="contests">Concours</string>
+    <string name="quiz_vote_draws">Quiz et Vote</string>
+    <string name="message_code">Code du message:</string>
+    <string name="participation">Participation:</string>
+    <string name="winner_list">Liste des gagnants:</string>
+    <string name="winners_list">Liste des gagnants</string>
+    <string name="results">Résultats</string>
+    <string name="phone_messages">Messages téléphoniques</string>
+    <string name="are">Etes-vous sûr?</string>
+    <string name="delete">Vous souhaitez supprimer ce message</string>
+    <string name="deleted">Effacé</string>
+
+
+</resources>
